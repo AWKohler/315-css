@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>About Aronne Kohler</title>
+
+        <link rel="stylesheet" href="styles.css" />
+
+        <!-- Embedded CSS: applies to the entire document unless overridden by inline styles.-->
+        <style>
+            /* Embedded Styles */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                margin: 0;
+                padding: 20px;
+            }
+
+            h1 {
+                color: #336699;
+                text-align: center;
+            }
+
+            p {
+                color: #333333;
+                font-size: 1.1rem;
+            }
+
+            /* Example to show that inline styles override this embedded style */
+            .highlight {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Inline style override: changes the color to red, overriding the embedded styling. -->
+        <h1 style="color: red">Hello, I'm Aronne Kohler!</h1>
+
+        <!-- Introduction with some embedded styled paragraphs -->
+        <p>
+            I am a <strong>21-year-old</strong> junior at Liberty University,
+            studying
+            <strong>Computer Science - Software Engineering Cognate</strong>.
+        </p>
+        <p id="text-section">
+            I have a brother and a sister, and one of my greatest passions is
+            coding.
+        </p>
+
+        <!-- Another example of inline style on a <div>-->
+        <div style="border: 2px solid green; padding: 10px" class="highlight">
+            <p>
+                I'm proficient in <em>JavaScript</em>, <em>Java</em>,
+                <em>C++</em>, and <em>Python</em>.
+            </p>
+        </div>
+
+        <footer style="text-align: center; margin-top: 40px">
+            <p>© 2025 by Aronne Kohler</p>
+        </footer>
+    </body>
+</html>
