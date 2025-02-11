@@ -1,0 +1,102 @@
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #04aa6d;
+}
+
+form {
+    /* background: #fff */
+    display: flex; /* This enables Flexbox */
+    flex-direction: column; /* Ensures top-to-bottom layout */
+    width: 200px;
+    max-width: 600px;
+    border-radius: 20px;
+    
+    row-gap: 8px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+
+    /* background-color: white; */
+    z-index: 10;
+
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1px);
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+main {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    border-radius: 100px;
+    padding: 6px;
+
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(217, 217, 217);
+    /* border-color: rgb(123, 123, 255); */
+}
+
+button {
+    border-radius: 100px;
+    padding: 6px;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(217, 217, 217);
+}
+
+#form-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+
+#form-label {
+    color: #333;
+    letter-spacing: -0.05em;
+}
+
+#form-title {
+    color: #333;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+}
+
+#svg-design {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Lower than the form */
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+}
