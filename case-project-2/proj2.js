@@ -4,35 +4,49 @@ document.getElementById("form").addEventListener("submit", function(event){
 
 function calculateAge() {
     let name = document.getElementById("name").value;
-    let birthDate = document.getElementById("birthYear").value; // Get full date string (YYYY-MM-DD)
+    // Expecting a full date string (YYYY-MM-DD) from the input
+    let birthDateInput = document.getElementById("birthYear").value;
 
-    if (!name || !birthDate) {
+    if (!name || !birthDateInput) {
         document.getElementById("result").innerText = "Please enter a valid name and birth date.";
         document.getElementById("message").innerText = "";
         return;
     }
 
+    // Parse the input date and get today's date
+    let birthDate = new Date(birthDateInput);
+    let today = new Date();
+
     console.log("User Input:");
     console.log(`Name: ${name}`);
-    console.log(`Birth Date: ${birthDate}`);
+    console.log(`Birth Date: ${birthDate.toDateString()}`);
 
-    let birthYear = new Date(birthDate).getFullYear(); // Extract year from date
-    let currentYear = new Date().getFullYear();
-    let age = currentYear - birthYear;
-    let ageInMonths = age * 12;
-
-
-    if (birthYear > currentYear) {
-        document.getElementById("result").innerText = "Error: Birth year cannot be in the future.";
-        console.warn("Validation Warning: User entered a future birth year.");
+    // Validate that the birth date is not in the future
+    if (birthDate > today) {
+        document.getElementById("result").innerText = "Error: Birth date cannot be in the future.";
+        console.warn("Validation Warning: User entered a future birth date.");
         return;
     }
 
-    console.log(`Calculated Age: ${age} years`);
-    console.log(`Calculated Age in Months: ${ageInMonths} months`);
+    // Calculate age in years
+    let ageYears = today.getFullYear() - birthDate.getFullYear();
+    // If the birthday hasn't occurred yet this year, subtract one year
+    if (today.getMonth() < birthDate.getMonth() || 
+       (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
+        ageYears--;
+    }
 
+    // Calculate the total age in months
+    let monthsDifference = (today.getFullYear() - birthDate.getFullYear()) * 12 + (today.getMonth() - birthDate.getMonth());
+    // If today's day is less than the birth day, subtract one month from the total
+    if (today.getDate() < birthDate.getDate()) {
+        monthsDifference--;
+    }
 
-    document.getElementById("result").innerText = `${name}, you are approximately ${ageInMonths} months old!`;
+    console.log(`Calculated Age: ${ageYears} years`);
+    console.log(`Calculated Age in Months: ${monthsDifference} months`);
+
+    document.getElementById("result").innerText = `${name}, you are approximately ${monthsDifference} months old!`;
 
     displayMessage(name);
 }
