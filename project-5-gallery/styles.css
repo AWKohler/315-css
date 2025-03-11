@@ -53,6 +53,8 @@ a:hover {
 }
 
 .profile-item {
+    position: relative;
+    overflow: hidden;
     width: 200px;
 }
 
