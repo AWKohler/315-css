@@ -52,6 +52,9 @@ a:hover {
     text-decoration: underline;
 }
 
+.profile-item {
+    width: 200px;
+}
 
 /* Gallery layout styles */
 .gallery {
