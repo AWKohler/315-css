@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Aronne - Selections</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="proj7.js" defer></script>
+    </head>
+    <body>
+        <!-- Navigation bar -->
+        <nav>
+            <div class="topnav">
+                <a href="index.html">Home</a>
+                <a href="photos.html">Photos</a>
+                <a href="account.html">Sign Up</a>
+                <a class="active" href="selections.html">Selections</a>
+            </div>
+        </nav>
+
+        <main>
+            <h1>Make Your Selections</h1>
+            
+            <!-- Requirement #1: Form with selections that can be added/removed from array -->
+            <section id="selections-section">
+                <h2>Choose Your Interests</h2>
+                <div class="selection-form">
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interest" value="Photography"> Photography</label>
+                        <label><input type="checkbox" name="interest" value="Hiking"> Hiking</label>
+                        <label><input type="checkbox" name="interest" value="Cooking"> Cooking</label>
+                        <label><input type="checkbox" name="interest" value="Reading"> Reading</label>
+                        <label><input type="checkbox" name="interest" value="Gaming"> Gaming</label>
+                    </div>
+                    
+                    <div class="textbox-group">
+                        <label for="custom-interest">Add a custom interest:</label>
+                        <input type="text" id="custom-interest">
+                        <button type="button" id="add-custom">Add</button>
+                    </div>
+                    
+                    <button type="button" id="save-selections">Save Selections</button>
+                </div>
+                
+                <div class="selected-items">
+                    <h3>Your Selected Interests</h3>
+                    <ul id="selections-list"></ul>
+                </div>
+            </section>
+            
+            <!-- Requirement #2: Form with regex validation -->
+            <section id="contact-section">
+                <h2>Contact Information</h2>
+                <div class="contact-form">
+                    <div class="form-group">
+                        <label for="phone">Phone Number (digits only):</label>
+                        <input type="text" id="phone" placeholder="e.g., 5551234567">
+                        <span id="phone-error" class="error"></span>
+                    </div>
+                    <button type="button" id="validate-phone">Validate Phone</button>
+                </div>
+            </section>
+            
+            <!-- Requirement #3: File upload and display -->
+            <section id="upload-section">
+                <h2>Upload a Text File</h2>
+                <div class="file-upload">
+                    <input type="file" id="file-input" accept=".txt,.md,.csv">
+                    <button type="button" id="upload-button">Upload</button>
+                </div>
+                
+                <div class="file-content">
+                    <h3>File Contents</h3>
+                    <pre id="file-content-display"></pre>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
