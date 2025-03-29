@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Aronne Kohler - Sign Up</title>
+        <link rel="stylesheet" href="styles.css" />
+        <!-- Include the JavaScript files -->
+        <script src="objects.js"></script>
+        <script src="proj8.js"></script>
+    </head>
+    <body>
+        <!-- Navigation bar inside a nav tag -->
+        <nav>
+            <div class="topnav">
+                <a href="index.html">Home</a>
+                <a href="tasks.html">Tasks</a>
+                <a href="photos.html">Photos</a>
+                <a class="active" href="account.html">Sign Up</a>
+                <a href="selections.html">Selections</a>
+            </div>
+        </nav>
+
+        <main>
+            <h1>Sign Up</h1>
+
+            <form id="form">
+
+                <label id="form-title">Form</label>
+
+
+                <div id="form-block">
+                    <label id="form-label">Full Name</label>
+                    <input id="name" aria-label="name" type="text" required>
+                </div>
+
+                <div id="form-block">
+                    <label id="form-label">Username</label>
+                    <input id="username" aria-label="username" type="text" required>
+                </div>
+
+                <div id="form-block">
+                    <label id="form-label">Email</label>
+                    <input id="email" aria-label="email" type="email" required>
+                </div>
+
+                <div id="form-block">
+                    <label id="form-label">Password</label>
+                    <input id="password" aria-label="password" type="password" required>
+                </div>
+
+                <div id="form-block">
+                    <label id="form-label">Confirm Password</label>
+                    <input id="confirm" aria-label="confirm" type="password" required>
+                </div>
+
+                <div id="form-block">
+                    <label id="form-label">Phone Number</label>
+                    <input id="phone" aria-label="phone" type="text" required>
+                </div>
+
+                <div id="form-block">
+                    <label id="form-label">Date Of Birth</label>
+                    <input type="date" aria-label="birthDate" id="birthDate" required>
+                </div>
+
+                <div id="form-block">
+                    <label id="form-label">Agree to terms</label>
+                    <input type="checkbox" aria-label="agree" id="agree" required>
+                </div>
+
+                <div id="form-block">
+                    <label id="form-label">Submit</label>
+                    <button onclick="calculateAge()">Calculate</button>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>
