@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Customizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Classes for styling instead of by id. -->
+    <div class="container">
+        <h1>Page Customizer</h1>
+        
+        <div class="customize-form">
+            <h2>Customize Page Appearance</h2>
+            <form id="customizeForm">
+                <div class="form-group">
+                    <label for="bgColor">Background Color:</label>
+                    <select id="bgColor" name="bgColor">
+                        <option value="#ffffff">White</option>
+                        <option value="#f0f0f0">Light Gray</option>
+                        <option value="#e0f7fa">Light Blue</option>
+                        <option value="#f9fbe7">Light Yellow</option>
+                        <option value="#e8f5e9">Light Green</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="textColor">Text Color:</label>
+                    <select id="textColor" name="textColor">
+                        <option value="#000000">Black</option>
+                        <option value="#333333">Dark Gray</option>
+                        <option value="#01579b">Dark Blue</option>
+                        <option value="#1b5e20">Dark Green</option>
+                        <option value="#b71c1c">Dark Red</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fontSize">Font Size:</label>
+                    <select id="fontSize" name="fontSize">
+                        <option value="14px">Small (14px)</option>
+                        <option value="16px">Medium (16px)</option>
+                        <option value="18px">Large (18px)</option>
+                        <option value="20px">Extra Large (20px)</option>
+                    </select>
+                </div>
+                
+                <button type="submit">Apply Settings</button>
+            </form>
+        </div>
+        
+        <div class="content">
+            <h2>Sample Content</h2>
+            <p>This is some sample text to demonstrate the text customization options. The background color, text color, and font size will change based on the selections.</p>
+            <p>Your settings will be saved via cookies, and are persistant when you revisit this page. They are also reflected in the URL query string.</p>
+        </div>
+        
+        <div id="settings-display" class="settings-display">
+            <h3>Current Settings</h3>
+            <p id="current-settings">Loading settings...</p>
+        </div>
+    </div>
+    
+    <script src="proj9.js"></script>
+</body>
+</html>
