@@ -25,7 +25,7 @@ xhr.onload = function () {
         list += '<span class="valueField">$' + xhr.response[i].current_price + '</span>'
         list += '<span class="symbolField">Symbol: ' + xhr.response[i].symbol + '</span>'
         list += '<span class="marketCapField">Market Cap: $' + xhr.response[i].market_cap + '</span>'
-        list += '<span class="changeField">1 day change: ' + xhr.response[i].price_change_24h + '</span>'
+        list += '<span class="changeField">1 day change: ' + xhr.response[i].price_change_24h.toFixed(3) + '</span>'
         list += '<span class="changeField">1 day Change %: ' + xhr.response[i].price_change_percentage_24h + '</span>'
         list += '</div>'
         
