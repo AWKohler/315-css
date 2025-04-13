@@ -25,7 +25,7 @@ xhr.onload = function () {
         list += '<span class="valueField">$' + xhr.response[i].current_price + '</span>'
         list += '<span class="symbolField">Symbol: ' + xhr.response[i].symbol + '</span>'
         list += '<span class="marketCapField">Market Cap: $' + xhr.response[i].market_cap + '</span>'
-        list += '<span class="changeField">1 day change: ' + xhr.response[i].price_change_24h).toFixed(3) + '</span>'
+        list += '<span class="changeField">1 day change: ' + xhr.response[i].price_change_24h + '</span>'
         list += '<span class="changeField">1 day Change %: ' + xhr.response[i].price_change_percentage_24h + '</span>'
         list += '</div>'
         
@@ -35,12 +35,23 @@ xhr.onload = function () {
 
     // Set the inner html
     content.innerHTML = list;
+  } else {
+    // If there is an http error
+    // send the error to the UI
+    const content = document.getElementById('xhrContent');
+    content.innerHTML = `HTTP error! status: ${xhr.status}`;
+    console.error(`HTTP error, status: ${xhr.status}`);
   }
 };
 
-// Set the on error function
+// Set the on error function for if there is an XHR error
 xhr.onerror = function () {
-    console.error('XHR error: ' + xhr.status);
+
+    // send the error to the UI
+    const content = document.getElementById('xhrContent');
+    content.innerHTML = 'XHR error: ' + xhr.status;
+
+    console.error('XHR error:', xhr.status);
 };
 
 // Send the request
@@ -51,9 +62,13 @@ fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
 
     // Set the code that runs after the fetch completes
   .then(response => {
-    // If there is an error
+    // If there is an http error
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+
+      // send the error to the UI
+      const content = document.getElementById('fetchContent');
+      content.innerHTML = `HTTP error! status: ${response.status}`;
+      throw new Error(`HTTP error, status: ${response.status}`);
     }
     return response.json();
   })
@@ -74,7 +89,7 @@ fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
       list += '<span class="valueField">$' + xhr.response[i].current_price + '</span>'
       list += '<span class="symbolField">Symbol: ' + xhr.response[i].symbol + '</span>'
       list += '<span class="marketCapField">Market Cap: $' + xhr.response[i].market_cap + '</span>'
-      list += '<span class="changeField">1 day change: ' + parseFloat(xhr.response[i].price_change_24h).toFixed(3) + '</span>'
+      list += '<span class="changeField">1 day change: ' + xhr.response[i].price_change_24h.toFixed(3) + '</span>'
       list += '<span class="changeField">1 day Change %: ' + xhr.response[i].price_change_percentage_24h + '</span>'
       list += '</div>'
         
@@ -88,5 +103,8 @@ fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
 
     // If there is a fetch error
   .catch(error => {
+    // send the error to the UI
+    const content = document.getElementById('fetchContent');
+    content.innerHTML = 'Fetch error: ' + error;
     console.error('Fetch error:', error);
   });
