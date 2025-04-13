@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Puzzle Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Puzzle Game</h1>
+        
+        <div class="game-controls">
+            <div class="timer">Time: <span id="timer">00:00</span></div>
+            <button id="reset-button">Reset Puzzle</button>
+        </div>
+        
+        <div class="puzzle-container">
+            <div class="puzzle-pieces" id="pieces-container"></div>
+            <div class="puzzle-board" id="puzzle-board"></div>
+        </div>
+        
+        <div id="success-message" class="hidden">
+            <h2>Congratulations!</h2>
+            <p>You solved the puzzle in <span id="completion-time"></span>!</p>
+            <p>Best time: <span id="best-time">None yet</span></p>
+        </div>
+    </div>
+    
+    <script src="js/proj10.js"></script>
+</body>
+</html>
