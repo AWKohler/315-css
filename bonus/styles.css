@@ -1,0 +1,96 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+h1 {
+    text-align: center;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.hero-card, .villain-card {
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+.hero-card:hover, .villain-card:hover {
+    transform: scale(1.05);
+}
+.hero-card {
+    background: linear-gradient(135deg, #6ab7ff, #1c62d9);
+    color: white;
+    border: 3px solid gold;
+}
+.villain-card {
+    background: linear-gradient(135deg, #ff6a6a, #d91c1c);
+    color: white;
+    border: 3px solid black;
+}
+.card-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.action-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.action-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+.action-log {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #ddd;
+    margin-bottom: 10px;
+}
+.hero-speaks {
+    border-left: 5px solid #1c62d9;
+}
+.villain-speaks {
+    border-left: 5px solid #d91c1c;
+}
+.epic-section {
+    background: linear-gradient(45deg, #333, #666);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+.epic-title {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.epic-log {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.1);
+    font-size: 1.1em;
+}
